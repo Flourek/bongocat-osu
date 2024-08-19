@@ -12,6 +12,6 @@ First, it detects if your mouse is being centered on your screen. If it is, then
 "fpsReturnSpeed" : 50
 ```
 
-"fpsSensitivity" controls how fast the bongocat's mouse moves.
+"fpsSensitivity" controls how sensitive the bongocat's mouse is to your movements.
 
 "fpsReturnSpeed" controls how fast the bongocat's mouse returns to the center after you let go of your mouse.
