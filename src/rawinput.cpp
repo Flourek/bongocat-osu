@@ -23,9 +23,25 @@ class MouseTracker {
 public:
     MouseTracker() : frameCount(0) {}
 
+    int screenWidth = GetSystemMetrics(SM_CXSCREEN);
+    int screenHeight = GetSystemMetrics(SM_CYSCREEN);
+  
+
     bool isCentered() {
+        
+        HWND hwnd = GetForegroundWindow();
+        if (hwnd) {
+            RECT rcApp;
+            GetWindowRect(hwnd, &rcApp);
+            if(rcApp.right != NULL && rcApp.bottom != NULL){
+                screenWidth = rcApp.right;
+                screenHeight = rcApp.bottom;
+            }
+        }
+
         POINT cursorPos;
         GetCursorPos(&cursorPos);
+        // std::cout << screenWidth << std::endl;
         int screenX = (cursorPos.x / screenWidth);
         int screenY = (cursorPos.y / screenHeight);
 
